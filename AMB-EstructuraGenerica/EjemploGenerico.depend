@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1524861917 source:c:\test\scarafilo\ejemplogenerico\estructuragenerica.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"EstructuraGenerica.h"
+
+1524860804 c:\test\scarafilo\ejemplogenerico\estructuragenerica.h
+
+1524861554 source:c:\test\scarafilo\ejemplogenerico\main.c
+	<stdio.h>
+	<stdlib.h>
+	"EstructuraGenerica.h"
+
+1538481737 source:d:\primeraparteparcial\amb-estructuragenerica\edirector.c
+
+1538493037 source:d:\primeraparteparcial\amb-estructuragenerica\epelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ePelicula.h"
+	"funcionesExtras.h"
+
+1538489197 d:\primeraparteparcial\amb-estructuragenerica\epelicula.h
+	"eDirector.h"
+
+1538483032 d:\primeraparteparcial\amb-estructuragenerica\efecha.h
+
+1538493017 source:d:\primeraparteparcial\amb-estructuragenerica\funcionesextras.c
+	"funcionesExtras.h"
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+
+1538492531 d:\primeraparteparcial\amb-estructuragenerica\funcionesextras.h
+
+1538490321 source:d:\primeraparteparcial\amb-estructuragenerica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ePelicula.h"
+	"funcionesExtras.h"
+
+1538485001 d:\primeraparteparcial\amb-estructuragenerica\edirector.h
+	"efecha.h"
+
