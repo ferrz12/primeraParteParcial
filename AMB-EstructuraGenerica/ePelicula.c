@@ -85,6 +85,7 @@ int ePelicula_buscarPorId(ePelicula listado[] ,int limite, int id)
 
 void ePelicula_mostrarUno(ePelicula unaPelicula)
 {
+     printf("Id:     Titulo:     Nacionalidad:     Anio:     Director:   \n");
      printf("%d        %s              %s       %d         %d   \n", unaPelicula.idPelicula, unaPelicula.titulo, unaPelicula.nacionalidad, unaPelicula.anio, unaPelicula.idDirector);
 }
 
@@ -93,7 +94,6 @@ int ePelicula_mostrarListado(ePelicula listado[],int limite)
     int retorno = -1;
     int i;
 
-    printf("Id:     Titulo:     Nacionalidad:     Anio:     Director  :\n");
         for(i=0; i<limite; i++)
         {
             if(listado[i].estado == OCUPADO)
@@ -156,7 +156,6 @@ int ePelicula_cargarPelicula(ePelicula listado[], int limite){
 
     int indice;
     int retorno;
-    int valor;
 
     indice = ePelicula_buscarLugarLibre(listado, limite);
 
@@ -174,14 +173,7 @@ int ePelicula_cargarPelicula(ePelicula listado[], int limite){
       }
 
       printf("Ingrese anio: ");
-      gets(listado[indice].anio);
-      retorno = validarEntero(gets((listado[indice].anio)));
-
-        while(retorno == 0){
-        printf("Error, esta ingresando letras, por favor ingrese numeros");
-        gets(listado[indice].anio);
-        retorno = validarEntero(gets((listado[indice].anio)));
-      }
+      scanf("%d", &listado[indice].anio);
 
 
       printf("Ingrese nacionalidad: ");
@@ -214,3 +206,83 @@ void inicializarPeliculaHardCode(ePelicula listado[])
         listado[i].idDirector = idDirector[i];
     }
 }
+
+int ePelicula_baja(ePelicula listado[] ,int limite){
+
+    int i;
+    int idPeliculaBuscada;
+    int retorno;
+    char decision;
+
+    retorno = -1;
+
+    printf("Ingrese identificador de la pelicula que desea dar de baja: ");
+    scanf("%d", &idPeliculaBuscada);
+
+    while(idPeliculaBuscada == 0){
+        printf("No existe el identificador 0, por favor reingrese el identificador: ");
+        scanf("%d", &idPeliculaBuscada);
+    }
+
+    for(i = 0; i < limite; i++){
+        if(listado[i].estado == OCUPADO && listado[i].idPelicula == idPeliculaBuscada){
+            printf("\nPelicula encontrada: \n\n");
+            ePelicula_mostrarUno(listado[i]);
+            printf("\nEsta seguro que desea dar de baja esta pelicula?, s/n : ");
+            fflush(stdin);
+            scanf("%c", &decision);
+
+            if(decision == 's'){
+                listado[i].estado = LIBRE;
+                retorno = 0;
+                system("cls");
+            }
+
+        }
+    }
+
+    system("cls");
+
+    return retorno;
+}
+
+int ePelicula_modificacion(ePelicula listado[] ,int limite){
+
+    int idPeliculaBuscada;
+    int opcion;
+    int i;
+
+    printf("Ingrese identificador de la pelicula que desea dar de baja: ");
+    scanf("%d", &idPeliculaBuscada);
+
+    while(idPeliculaBuscada == 0){
+        printf("No existe el identificador 0, por favor reingrese el identificador: ");
+        scanf("%d", &idPeliculaBuscada);
+    }
+
+    for(i = 0; i < limite; i++){
+        if(listado[i].idPelicula == idPeliculaBuscada){
+            printf("\nPelicula encontrada: \n\n");
+            ePelicula_mostrarUno(listado[i]);
+            printf("\nQue desea modificar?\n\n");
+            printf("1. Titulo\n");
+            printf("2. Anio\n");
+            printf("3. Nacionalidad\n");
+            printf("4. Director\n\n");
+            printf("Ingrese opcion: ");
+            scanf("%d", &opcion);
+
+            switch(opcion){
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    printf("Ingrese un valor de 1 a 4 por favor");
+                    break;
+            }
+        }
+    }
+
+}
+

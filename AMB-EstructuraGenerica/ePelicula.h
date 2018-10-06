@@ -27,8 +27,8 @@ int ePelicula_mostrarListado(ePelicula[] ,int limite);
 int ePelicula_mostrarListadoConBorrados(ePelicula[] ,int limite);
 
 int ePelicula_alta(ePelicula[] ,int limite);
-int ePelicula_baja(ePelicula[] ,int limite, int id);
-int ePelicula_modificacion(ePelicula[] ,int limite, int id);
+int ePelicula_baja(ePelicula[] ,int limite);
+int ePelicula_modificacion(ePelicula[] ,int limite);
 int ePelicula_cargarPelicula(ePelicula[], int);
 void inicializarPeliculaHardCode(ePelicula[]);
 

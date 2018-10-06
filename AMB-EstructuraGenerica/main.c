@@ -21,18 +21,24 @@ int main()
             ePelicula_alta(listadoDePeliculas, CANTIDAD);
             break;
         case 2:
-            ePelicula_mostrarListado(listadoDePeliculas, CANTIDAD);
+            ePelicula_modificacion(listadoDePeliculas, CANTIDAD);
             break;
         case 3:
-            opcion = 3;
+            ePelicula_baja(listadoDePeliculas, CANTIDAD);
             break;
+        case 4:
+        case 5:
+        case 6:
+            ePelicula_mostrarListado(listadoDePeliculas, CANTIDAD);
+        case 7:
+            opcion = 7;
         default:
             printf("Ingrese opcion valida!");
             break;
     }
 
 
-    }while(opcion != 3);
+    }while(opcion != 7);
 
     return 0;
 }

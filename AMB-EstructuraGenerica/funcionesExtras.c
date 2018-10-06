@@ -8,9 +8,13 @@ int menuOpciones(){
     int opcion;
 
     printf("/--- Menu de opciones ---/\n");
-    printf("1. Dar de alta una pelicula\n");
-    printf("2. Listar\n");
-    printf("3. Salir\n");
+    printf("1. Altas peliculas\n");
+    printf("2. Modificar datos de una pelicula\n");
+    printf("3. Baja de una pelicula\n");
+    printf("4. Nuevo director\n");
+    printf("5. Eliminar director\n");
+    printf("6. Listar\n");
+    printf("7. Salir\n");
 
     opcion = getInt("Ingrese opcion: \n");
 
@@ -46,22 +50,6 @@ int validarCadena(char listado[]){
 
     return retorno;
 
-}
-
-int validarEntero(char numero[]){
-
-    int retorno;
-    int i;
-
-    retorno = -1;
-
-    for (i = 0; i < strlen(numero); i++)
-    {
-        if(!isdigit(numero[i]) ) {
-            retorno = 0;
-            break;
-        }
-    }
 }
 
 }

@@ -43,3 +43,34 @@
 1538485001 d:\primeraparteparcial\amb-estructuragenerica\edirector.h
 	"efecha.h"
 
+1538849838 source:c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\edirector.c
+
+1538857984 source:c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\epelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ePelicula.h"
+	"funcionesExtras.h"
+
+1538853290 c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\epelicula.h
+	"eDirector.h"
+
+1538849838 c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\edirector.h
+	"efecha.h"
+
+1538849838 c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\efecha.h
+
+1538850416 c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\funcionesextras.h
+
+1538853262 source:c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\funcionesextras.c
+	"funcionesExtras.h"
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+
+1538853385 source:c:\users\fernando\desktop\parcial\primeraparteparcial\amb-estructuragenerica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ePelicula.h"
+	"funcionesExtras.h"
+
