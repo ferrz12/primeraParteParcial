@@ -77,3 +77,36 @@
 	"ePelicula.h"
 	"funcionesExtras.h"
 
+1539011835 source:d:\rodriguezverafernandodavid\primeraparteparcial\amb-estructuragenerica\edirector.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eDirector.h"
+
+1539011795 d:\rodriguezverafernandodavid\primeraparteparcial\amb-estructuragenerica\edirector.h
+
+1539008860 source:d:\rodriguezverafernandodavid\primeraparteparcial\amb-estructuragenerica\funcionesextras.c
+	"funcionesExtras.h"
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+
+1538999950 d:\rodriguezverafernandodavid\primeraparteparcial\amb-estructuragenerica\funcionesextras.h
+
+1539011783 source:d:\rodriguezverafernandodavid\primeraparteparcial\amb-estructuragenerica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ePelicula.h"
+	"funcionesExtras.h"
+
+1539008842 d:\rodriguezverafernandodavid\primeraparteparcial\amb-estructuragenerica\epelicula.h
+	"eDirector.h"
+
+1539012140 source:d:\rodriguezverafernandodavid\primeraparteparcial\amb-estructuragenerica\epelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ePelicula.h"
+	"funcionesExtras.h"
+	"ePelicula.h"
+

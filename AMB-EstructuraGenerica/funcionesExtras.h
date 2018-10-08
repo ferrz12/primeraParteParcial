@@ -3,6 +3,7 @@
 #define TAMANIO 50
 
 int menuOpciones();
+int subMenuOpciones();
 int getInt(char texto[]);
 int validarCadena(char cadena[]);
 int validaRango(int numero, int maximo, int minimo);

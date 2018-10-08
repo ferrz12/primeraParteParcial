@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int menuOpciones(){
+int menuOpciones()
+{
 
     int opcion;
 
@@ -24,7 +25,8 @@ int menuOpciones(){
 
 }
 
-int getInt(char texto[]){
+int getInt(char texto[])
+{
 
     int numero;
 
@@ -36,27 +38,34 @@ int getInt(char texto[]){
 }
 
 
-int validarCadena(char listado[]){
+int validarCadena(char listado[])
+{
 
     int retorno;
 
     retorno = -1;
 
     int i;
-    for(i = 0; i < strlen(listado); i++){
-        if(isdigit(listado[i]) || strlen(listado) >= 50){
+    for(i = 0; i < strlen(listado); i++)
+    {
+        if(isdigit(listado[i]) || strlen(listado) >= 50)
+        {
             retorno = 0;
-            while(retorno == 0){
+            while(retorno == 0)
+            {
                 printf("Error, esta ingresando numeros o el nombre es muy largo, reingrese el dato por favor\n");
                 fflush(stdin);
-                if(isdigit(gets(listado)) || strlen(listado) >= 50){
-                   retorno = 0;
-                }else{
+                if(isdigit(gets(listado)) || strlen(listado) >= 50)
+                {
+                    retorno = 0;
+                }
+                else
+                {
                     retorno = 2;
                 }
             }
         }
-}
+    }
 
 }
 
@@ -64,11 +73,30 @@ int validaRango(int numero, int max, int min)
 {
     while(numero < min || numero > max)
     {
-        puts("Fuera de rango. Ingrese nuevamente: ");
-        fflush(stdin);
+        printf("Fuera de rango. Ingrese nuevamente: ");
         scanf("%d", &numero);
     }
+
     return numero;
+}
+
+int subMenuOpciones()
+{
+
+    int opcion;
+
+    printf("/--- Menu de opciones ---/\n");
+    printf("1. Listar peliculas\n");
+    printf("2. Listar director\n");
+    printf("3. Listar las mas viejas\n");
+    printf("4. Listar cada pelicula con su director\n");
+    printf("5. Salir\n");
+
+    opcion = getInt("Ingrese opcion: \n");
+
+    system("cls"); //limpio la pantalla despues de seleccionar opcion cada opcion
+
+    return opcion;
 }
 
 /*
