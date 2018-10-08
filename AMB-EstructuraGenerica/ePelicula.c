@@ -251,6 +251,7 @@ int ePelicula_modificacion(ePelicula listado[] ,int limite){
     int idPeliculaBuscada;
     int opcion;
     int i;
+    int retorno;
 
     printf("Ingrese identificador de la pelicula que desea dar de baja: ");
     scanf("%d", &idPeliculaBuscada);
@@ -274,8 +275,32 @@ int ePelicula_modificacion(ePelicula listado[] ,int limite){
 
             switch(opcion){
                 case 1:
+                    printf("Ingrese titulo nuevo: ");
+                    fflush(stdin);
+                    retorno = validarCadena(gets((listado[i].titulo)));
+                    while(retorno == 0){
+                        printf("Error, esta ingresando numeros, reingrese el dato por favor\n");
+                        fflush(stdin);
+                        retorno = validarCadena(gets((listado[i].titulo)));
+                      }
+                      system("cls");
+                    break;
                 case 2:
+                    printf("Ingrese anio: ");
+                    scanf("%d", &listado[i].anio);
+                    system("cls");
+                    break;
                 case 3:
+                    printf("Ingrese nacionalidad nueva: ");
+                    fflush(stdin);
+                    retorno = validarCadena(gets((listado[i].nacionalidad)));
+                    while(retorno == 0){
+                        printf("Error, esta ingresando numeros, reingrese el dato por favor\n");
+                        fflush(stdin);
+                        retorno = validarCadena(gets((listado[i].nacionalidad)));
+                      }
+                    system("cls");
+                    break;
                 case 4:
                 default:
                     printf("Ingrese un valor de 1 a 4 por favor");
@@ -285,4 +310,6 @@ int ePelicula_modificacion(ePelicula listado[] ,int limite){
     }
 
 }
+
+
 
