@@ -10,7 +10,8 @@ int main()
 
     ePelicula listadoDePeliculas[CANTIDAD];
     ePelicula_init(listadoDePeliculas, CANTIDAD);
-    inicializarPeliculaHardCode(listadoDePeliculas);
+    eDirector listadoDeDirectores[CANTIDAD];
+    eDirector_init(listadoDeDirectores, CANTIDAD);
 
     do{
 
@@ -27,9 +28,15 @@ int main()
             ePelicula_baja(listadoDePeliculas, CANTIDAD);
             break;
         case 4:
+            eDirector_alta(listadoDeDirectores, CANTIDAD);
+            break;
         case 5:
+            eDirector_baja(listadoDeDirectores, CANTIDAD);
+            break;
         case 6:
             ePelicula_mostrarListado(listadoDePeliculas, CANTIDAD);
+            eDirector_mostrarListado(listadoDeDirectores, CANTIDAD);
+            break;
         case 7:
             opcion = 7;
         default:

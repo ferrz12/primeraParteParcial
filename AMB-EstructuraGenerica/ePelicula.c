@@ -135,19 +135,22 @@ int ePelicula_mostrarListadoConBorrados(ePelicula listado[],int limite)
 
 int ePelicula_alta(ePelicula  listado[],int limite)
 {
-    /*
-        if(limite > 0 && listado != NULL)
-    {
-        int i;
-        for(i = 0; i < limite; i++){
-            ePelicula_cargarPelicula(listado, limite);;
-        }
 
+    int retorno;
+
+    retorno = ePelicula_cargarPelicula(listado, limite);
+
+    if(retorno == 0){
+
+        printf("Carga de pelicula satisfactoria!\n");
+        system("pause");
+        system("cls");
+
+    }else{
+        printf("No se pudo dar el alta de pelicula!\n");
+        system("pause");
+        system("cls");
     }
-    */
-    int retorno = -1;
-
-    ePelicula_cargarPelicula(listado, limite);
 
     return retorno;
 }
@@ -157,6 +160,9 @@ int ePelicula_cargarPelicula(ePelicula listado[], int limite){
     int indice;
     int retorno;
 
+
+    retorno = -1;
+
     indice = ePelicula_buscarLugarLibre(listado, limite);
 
     if(indice >= 0){
@@ -165,47 +171,36 @@ int ePelicula_cargarPelicula(ePelicula listado[], int limite){
 
       printf("Ingrese titulo: ");
       fflush(stdin);
-      retorno = validarCadena(gets((listado[indice].titulo)));
-      while(retorno == 0){
-        printf("Error, esta ingresando numeros, reingrese el dato por favor\n");
-        fflush(stdin);
-        retorno = validarCadena(gets((listado[indice].titulo)));
-      }
+      validarCadena(gets(listado[indice].titulo));
 
       printf("Ingrese anio: ");
+      //validarEntero(gets(listado[indice].anio));
       scanf("%d", &listado[indice].anio);
+      listado[indice].anio = validaRango(listado[indice].anio, 2018, 1900);
 
 
       printf("Ingrese nacionalidad: ");
       fflush(stdin);
-      retorno = validarCadena(gets((listado[indice].nacionalidad)));
-      while(retorno == 0){
-        printf("Error, esta ingresando numeros, reingrese el dato por favor\n");
-        fflush(stdin);
-        retorno = validarCadena(gets((listado[indice].nacionalidad)));
-      }
+      validarCadena(gets(listado[indice].nacionalidad));
 
       listado[indice].estado = OCUPADO;
+
+      retorno = 0;
+
+      system("cls");
 
     }else{
         printf("No se pueden cargar mas peliculas!\n");
         system("pause");
     }
 
+    return retorno;
+
     system("cls");
 
 }
 
-void inicializarPeliculaHardCode(ePelicula listado[])
-{
-    int idDirector[1] = {1};
 
-    int i;
-    for(i=0; i<1; i++)
-    {
-        listado[i].idDirector = idDirector[i];
-    }
-}
 
 int ePelicula_baja(ePelicula listado[] ,int limite){
 
@@ -213,6 +208,7 @@ int ePelicula_baja(ePelicula listado[] ,int limite){
     int idPeliculaBuscada;
     int retorno;
     char decision;
+
 
     retorno = -1;
 
@@ -277,29 +273,26 @@ int ePelicula_modificacion(ePelicula listado[] ,int limite){
                 case 1:
                     printf("Ingrese titulo nuevo: ");
                     fflush(stdin);
-                    retorno = validarCadena(gets((listado[i].titulo)));
-                    while(retorno == 0){
-                        printf("Error, esta ingresando numeros, reingrese el dato por favor\n");
-                        fflush(stdin);
-                        retorno = validarCadena(gets((listado[i].titulo)));
-                      }
-                      system("cls");
+                    validarCadena(gets(listado[i].titulo));
+                    system("cls");
+                    printf("Titulo cambiado satisfactoriamente!\n");
+                    system("pause");
                     break;
                 case 2:
                     printf("Ingrese anio: ");
                     scanf("%d", &listado[i].anio);
+                    listado[i].anio = validaRango(listado[i].anio, 2018, 1900);
                     system("cls");
+                    printf("Anio cambiado satisfactoriamente!\n");
+                    system("pause");
                     break;
                 case 3:
                     printf("Ingrese nacionalidad nueva: ");
                     fflush(stdin);
-                    retorno = validarCadena(gets((listado[i].nacionalidad)));
-                    while(retorno == 0){
-                        printf("Error, esta ingresando numeros, reingrese el dato por favor\n");
-                        fflush(stdin);
-                        retorno = validarCadena(gets((listado[i].nacionalidad)));
-                      }
+                    validarCadena(gets(listado[i].nacionalidad));
                     system("cls");
+                    printf("Nacionalidad cambiada satisfactoriamente!\n");
+                    system("pause");
                     break;
                 case 4:
                 default:

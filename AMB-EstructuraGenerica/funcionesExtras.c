@@ -44,12 +44,58 @@ int validarCadena(char listado[]){
 
     int i;
     for(i = 0; i < strlen(listado); i++){
-        if(isdigit(listado[i])){
+        if(isdigit(listado[i]) || strlen(listado) >= 50){
             retorno = 0;
+            while(retorno == 0){
+                printf("Error, esta ingresando numeros o el nombre es muy largo, reingrese el dato por favor\n");
+                fflush(stdin);
+                if(isdigit(gets(listado)) || strlen(listado) >= 50){
+                   retorno = 0;
+                }else{
+                    retorno = 2;
+                }
+            }
+        }
+}
+
+}
+
+int validaRango(int numero, int max, int min)
+{
+    while(numero < min || numero > max)
+    {
+        puts("Fuera de rango. Ingrese nuevamente: ");
+        fflush(stdin);
+        scanf("%d", &numero);
     }
+    return numero;
+}
 
-    return retorno;
+/*
 
+int validarEntero(char numero[]){
+
+    int retorno;
+
+    int i;
+    for(i = 0; i < strlen(numero); i++){
+        if(!isdigit(numero[i])){
+            retorno = 0;
+            while(retorno == 0){
+                printf("Error, esta ingresando letras, reingrese el dato por favor\n");
+                fflush(stdin);
+                if(!isdigit(gets(numero))){
+                   retorno = 0;
+                }else{
+                    retorno = 2;
+                }
+            }
+        }
 }
 
 }
+
+*/
+
+
+
